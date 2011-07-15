@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <!--[if lt IE 9]> 
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> 
+        <![endif]-->
+        <title>jquery.captionate.js Example</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.js"></script> 	
+        <style>
+            * {margin:0; padding: 0}
+            body {width: 600px; margin-left: auto; margin-right: auto; margin-top: 50px;}
+            figcaption {display: block; text-align: center; font-size: 0.8em; font-style: italic; padding: 5px 0;}
+            p {margin-bottom: 1em;}
+            .left {margin: 0 15px 10px 0; float: left;}
+            .right {margin: 0 0 10px 15px; float: right;}
+            .border {border: 1px solid #555;}
+            .clear {clear: both;}
+            }
+        </style>
+        <script src="jquery.captionate.js"></script>
+            <script>
+                $(document).ready(function(){	
+                    $('img.caption').captionate();
+                });
+            </script>
+    </head>
+    <body>
+        <p>
+            <a href="http://www.google.com">
+                <img alt="HTML5 image - this is an extremely long image caption I'm using" class="caption right" src="http://placehold.it/150x100" />
+            </a>
+            An example of paragraph text to the left of a small image. This image has a caption but no border.
+        </p> 
+        <div class="clear"></div>
+        <p>
+            <img class="caption left border" src="http://placehold.it/350x150" alt="This is another placeholder image caption" />
+            An example of a longer paragraph of text to the right of a larger image. This image has a border as well as a caption.
+        </p>
+        <p>You don't have to use float but this shows you that it works.
+        </p>
+        <div class="clear"></div>
+        <p>
+            <img class="caption border" src="http://placehold.it/200x200" alt="This image is not floated" />
+            Finally, here is an example of an image that isn't floated left or right.
+        </p>
+      </body>
+</html>
