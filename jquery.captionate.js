@@ -24,7 +24,7 @@
 		return this.each(function() { 
             
             var   $this = $(this), // save a reference to the current img.caption element
-                    altText = $this.attr('alt'), // grab the value of the image ALT attribute		
+                    altText = $this.attr('title'), // grab the value of the image ALT attribute		
                     imgWidth = $this.width(), // grab the width of the image
                     classList = $this.attr('class'); // save any classes attached to the <img>
 
