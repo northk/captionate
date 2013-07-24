@@ -26,14 +26,16 @@
             var $this = $(this); // save a reference to the current img.caption element
             var titleText = $this.attr('title'); // grab the value of the image TITLE attribute     
             var classList = $this.attr('class'); // save any classes attached to the <img>
+            var inlineStyles = $this.attr('style'); // save any inline styles attached to the <img>
             var imgWidth = $this.width(); // grab the width of the image
 
             $this.removeAttr('class'); // remove any classes from the original <img> element
-            
+            $this.removeAttr('style'); // remove any inline styles from the original <img> element
+
             // check and see if the image is contained in an immediate parent anchor link. 
             // if it is, construct a <figure> wrapping the anchor link instead of wrapping the <img>
             // add the <figcaption> after the link, using the TITLE element
-            // add back in any classes from the original <img> to the new <figure>
+            // add back in any classes and inline styles from the original <img> to the new <figure>
             // set the width of the <figure> to the width of the original image so captions will word-wrap
             // finally move the new <figure> to be just before the paragraph it was contained in.
             var $parentAnchorLink = $this.parent();
@@ -41,6 +43,7 @@
                 $newFigure = $parentAnchorLink.wrap('<figure></figure>').parent(); 
                 $parentAnchorLink.after('<figcaption>' + titleText + '</figcaption>');
                 $newFigure.addClass(classList);
+                $newFigure.attr('style', inlineStyles);
                 $newFigure.width(imgWidth);
                 $newFigure.parent('p').before($newFigure);                
             }
@@ -50,6 +53,7 @@
                 $newFigure = $this.wrap('<figure></figure>').parent(); 
                 $this.after('<figcaption>' + titleText + '</figcaption>');
                 $newFigure.addClass(classList);
+                $newFigure.attr('style', inlineStyles);
                 $newFigure.width(imgWidth);
                 $newFigure.parent('p').before($newFigure);                
             }

@@ -36,8 +36,18 @@
         </p>
         <div class="clear"></div>
         <p>
-            <img class="caption border" src="http://placehold.it/200x200" title="This image is not floated" alt="A grey placeholder image" />
-            Finally, here is an example of an image that isn't floated left or right.
+            Here is an example that uses (and preserves) an inline style.
+        </p>
+        <p>
+            This is important for some CMS editors that inject inline styles into HTML rather than using classes to style the image.
+            <img class="caption" style="float:right;border: 4px solid #555; margin-left:10px;" src="http://placehold.it/300x100" title="Injecting an inline style into the element" alt="A 300 x 100 pixel placeholder image" />
+        </p>
+        <div class="clear"></div>        
+        <p>
+            Finally, here is an example of an image that isn't floated left or right:
+        </p>
+        <p>
+            <img class="caption border" src="http://placehold.it/150x50" title="This image is not floated" alt="A grey placeholder image" />
         </p>
         <script>
             // wait until images have all loaded so we can properly get their width
